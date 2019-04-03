@@ -18,11 +18,7 @@
 function GameObject(ObjStats){
   this.createdAt = ObjStats.createdAt;
   this.name = ObjStats.name;
-  this.dimensions =  function dimensions(ObjStats){
-    this.length = ObjStats.length;
-    this.width = ObjStats.width;
-    this.height = ObjStats.height;
-  };
+  this.dimensions = ObjStats.dimensions;
 }
 
 GameObject.prototype.destroy = function(){
@@ -42,7 +38,7 @@ CharacterStats.prototype = Object.create(GameObject.prototype)
 CharacterStats.prototype.takeDamage = function(){
   return `${this.name} took damage`;
 }
-
+                        
 /*
   === Humanoid (Having an appearance or character resembling that of a human.) ===
   * team
