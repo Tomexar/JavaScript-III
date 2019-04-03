@@ -4,7 +4,7 @@
 * 1. Without pointing to anything "this" with be bound to the window object.
 * 2. Implicit - when a function is called using dot notation the object before the . is what this points to 
 * 3. New- when a constructior function is used "this" points to the new object being created
-* 4. 
+* 4. Explicit- When call or apply are used on a function 'this' is explictly bound
 *
 * write out a code example of each explanation above
 */
@@ -41,10 +41,14 @@ function greet(greeter){
 };
 
 let Tommy = new greet('Tom');
+let Dave = new greet('Dave');
 
 Tommy.speak();
+
 
 // Principle 4
 
 // code example for Explicit Binding
 
+Dave.speak();
+Tommy.speak.call(Dave);
